@@ -48,5 +48,26 @@
         var todo = this.todos[position];
         todo.completed = !todo.completed;
         this.displayTodos();
+    },
+    toggleAll: function() {
+        var totalTodos = this.todos.length
+        var completedTodos = 0
+    
+        // get number of completed todos
+        for (var i = 0; i < totalTodos; i++) {
+            if (this.todos[i].completed === true) {
+                completedTodos++
+            }
+        }
+    
+        // Case 1: if everything's true, make everything false
+        if (completedTodos === totalTodos) {
+            // make everything false
+            for (var i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = false
+            }
+        }
+        
+        this.displayTodos()
     }
 }; 
