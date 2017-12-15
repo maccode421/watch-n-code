@@ -2,13 +2,27 @@
  var todoList = {
     todos: [],
     displayTodos: function() {
-        console.log('My Todos:');
-        for (var i = 0; i < this.todos.length; i++) {
+        if (this.todos.length === 0) {
+            console.log('Your tod list is empty!')
+        } else {
+            console.log('My Todos:');
+            for (var i = 0; i < this.todos.length; i++) {
             // this.todos.length has 3 items
             // i = 0
             // i = 1
             // i = 2
-            console.log(this.todos[i].todoText);
+                console.log(this.todos[i].todoText);
+                
+                // check if .completed is true
+                if (this.todos[i].completed === true) {
+                // print with (x)
+                console.log('(x)', this.todos[i].todoText);
+                // else
+                } else {
+                // print with ( )
+                console.log('( )', this.todos[i].todoText);
+                }
+            }
         }
     },
     // an addTodo method
